@@ -243,7 +243,7 @@ func (t *Table) Diff(prevTable *Table, dialect Dialect) (exprList []SqlExpr) {
 		if prevKey == nil {
 			exprList = append(exprList, dialect.AddIndex(key))
 		} else {
-			if !key.IsPrimary() {
+			if !key.IsPrimary() && !key.IsPartition() {
 				indexDef := key.Def.TableExpr(key.Table).Ex(context.Background()).Query()
 				prevIndexDef := prevKey.Def.TableExpr(prevKey.Table).Ex(context.Background()).Query()
 
