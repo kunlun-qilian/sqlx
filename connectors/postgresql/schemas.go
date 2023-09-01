@@ -186,5 +186,5 @@ func (IndexSchema) TableName() string {
      LEFT JOIN pg_namespace n ON n.oid = c.relnamespace
      LEFT JOIN pg_tablespace t ON t.oid = i.reltablespace
   WHERE (c.relkind in ('r','m','p'))
-    AND i.relkind in ('i', 'I'))`
+    AND i.relkind in ('i', 'I')) as pg_indexes`
 }
