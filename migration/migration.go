@@ -6,8 +6,8 @@ import (
 
 	contextx "github.com/go-courier/x/context"
 
-	"github.com/go-courier/sqlx/v2"
-	"github.com/go-courier/sqlx/v2/enummeta"
+	"github.com/kunlun-qilian/sqlx/v2"
+	"github.com/kunlun-qilian/sqlx/v2/enummeta"
 )
 
 type contextKeyMigrationOutput struct{}

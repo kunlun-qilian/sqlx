@@ -1,9 +1,9 @@
 package er_test
 
 import (
-	"github.com/go-courier/sqlx/v2/er"
-	"github.com/go-courier/sqlx/v2/generator/__examples__/database"
-	"github.com/go-courier/sqlx/v2/postgresqlconnector"
+	"github.com/kunlun-qilian/sqlx/v2/er"
+	"github.com/kunlun-qilian/sqlx/v2/generator/__examples__/database"
+	"github.com/kunlun-qilian/sqlx/v2/postgresqlconnector"
 	"github.com/kunlun-qilian/utils/json"
 )
 

@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/go-courier/sqlx/v2"
-	"github.com/go-courier/sqlx/v2/builder"
-	"github.com/go-courier/sqlx/v2/migration"
 	"github.com/google/uuid"
+	"github.com/kunlun-qilian/sqlx/v2"
+	"github.com/kunlun-qilian/sqlx/v2/builder"
+	"github.com/kunlun-qilian/sqlx/v2/migration"
 	"github.com/onsi/gomega"
 )
 

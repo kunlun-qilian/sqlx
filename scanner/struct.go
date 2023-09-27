@@ -7,9 +7,9 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/go-courier/sqlx/v2/builder"
-	"github.com/go-courier/sqlx/v2/scanner/nullable"
 	reflectx "github.com/go-courier/x/reflect"
+	"github.com/kunlun-qilian/sqlx/v2/builder"
+	"github.com/kunlun-qilian/sqlx/v2/scanner/nullable"
 )
 
 type RowScanner interface {

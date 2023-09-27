@@ -7,7 +7,7 @@ import (
 
 	"github.com/go-courier/codegen"
 	"github.com/go-courier/packagesx"
-	"github.com/go-courier/sqlx/v2/builder"
+	"github.com/kunlun-qilian/sqlx/v2/builder"
 )
 
 func (m *Model) snippetSetDeletedAtIfNeedForFieldValues(file *codegen.File) codegen.Snippet {
@@ -67,7 +67,7 @@ if _, ok := fieldValues[?]; !ok {
 func (m *Model) WriteCreate(file *codegen.File) {
 	file.WriteBlock(
 		codegen.Func(codegen.Var(
-			codegen.Type(file.Use("github.com/go-courier/sqlx/v2", "DBExecutor")), "db")).
+			codegen.Type(file.Use("github.com/kunlun-qilian/sqlx/v2", "DBExecutor")), "db")).
 			Named("Create").
 			MethodOf(codegen.Var(m.PtrType(), "m")).
 			Return(codegen.Var(codegen.Error)).
@@ -79,7 +79,7 @@ func (m *Model) WriteCreate(file *codegen.File) {
 _, err := db.ExecExpr(?(db, m, nil))
 return err
 `,
-					codegen.Id(file.Use("github.com/go-courier/sqlx/v2", "InsertToDB")),
+					codegen.Id(file.Use("github.com/kunlun-qilian/sqlx/v2", "InsertToDB")),
 				),
 			),
 	)
@@ -88,7 +88,7 @@ return err
 
 		file.WriteBlock(
 			codegen.Func(
-				codegen.Var(codegen.Type(file.Use("github.com/go-courier/sqlx/v2", "DBExecutor")), "db"),
+				codegen.Var(codegen.Type(file.Use("github.com/kunlun-qilian/sqlx/v2", "DBExecutor")), "db"),
 				codegen.Var(codegen.Slice(codegen.String), "updateFields"),
 			).
 				Named("CreateOnDuplicateWithUpdateFields").
@@ -105,7 +105,7 @@ if len(updateFields) == 0 {
 					m.snippetSetUpdatedAtIfNeed(file),
 
 					codegen.Expr(`
-fieldValues := `+file.Use("github.com/go-courier/sqlx/v2/builder", "FieldValuesFromStructByNonZero")+`(m, updateFields...)
+fieldValues := `+file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "FieldValuesFromStructByNonZero")+`(m, updateFields...)
 `),
 					func() codegen.Snippet {
 						if m.HasAutoIncrement {
@@ -144,11 +144,11 @@ for field := range fieldValues {
 	}
 }
 
-additions := `+file.Use("github.com/go-courier/sqlx/v2/builder", "Additions")+`{}
+additions := `+file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "Additions")+`{}
 
 switch db.Dialect().DriverName() {
 case "mysql":	
-	additions = append(additions, `+file.Use("github.com/go-courier/sqlx/v2/builder", "OnDuplicateKeyUpdate")+`(table.AssignmentsByFieldValues(fieldValues)...))
+	additions = append(additions, `+file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "OnDuplicateKeyUpdate")+`(table.AssignmentsByFieldValues(fieldValues)...))
 case "postgres":
 	indexes := m.UniqueIndexes()
 	fields := make([]string, 0)
@@ -158,13 +158,13 @@ case "postgres":
 	indexFields, _ := db.T(m).Fields(fields...)
 
 	additions = append(additions,
-			`+file.Use("github.com/go-courier/sqlx/v2/builder", "OnConflict")+`(indexFields).
+			`+file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "OnConflict")+`(indexFields).
 				DoUpdateSet(table.AssignmentsByFieldValues(fieldValues)...))
 }
 
-additions = append(additions, `+file.Use("github.com/go-courier/sqlx/v2/builder", "Comment")+`("User.CreateOnDuplicateWithUpdateFields"))
+additions = append(additions, `+file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "Comment")+`("User.CreateOnDuplicateWithUpdateFields"))
 
-expr := `+file.Use("github.com/go-courier/sqlx/v2/builder", "Insert")+`().Into(table, additions...).Values(cols, vals...)
+expr := `+file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "Insert")+`().Into(table, additions...).Values(cols, vals...)
 
 _, err := db.ExecExpr(expr)
 return err
@@ -180,18 +180,18 @@ return err
 func (m *Model) WriteDelete(file *codegen.File) {
 	file.WriteBlock(
 		codegen.Func(codegen.Var(
-			codegen.Type(file.Use("github.com/go-courier/sqlx/v2", "DBExecutor")), "db")).
+			codegen.Type(file.Use("github.com/kunlun-qilian/sqlx/v2", "DBExecutor")), "db")).
 			Named("DeleteByStruct").
 			MethodOf(codegen.Var(m.PtrType(), "m")).
 			Return(codegen.Var(codegen.Error)).
 			Do(
 				codegen.Expr(`
 _, err := db.ExecExpr(
-`+file.Use("github.com/go-courier/sqlx/v2/builder", "Delete")+`().
+`+file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "Delete")+`().
 From(
 	db.T(m),
-`+file.Use("github.com/go-courier/sqlx/v2/builder", "Where")+`(m.ConditionByStruct(db)),
-`+file.Use("github.com/go-courier/sqlx/v2/builder", "Comment")+`(?),
+`+file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "Where")+`(m.ConditionByStruct(db)),
+`+file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "Comment")+`(?),
 ),
 )
 
@@ -223,7 +223,7 @@ func (m *Model) WriteByKey(file *codegen.File) {
 
 				file.WriteBlock(
 					codegen.Func(codegen.Var(
-						codegen.Type(file.Use("github.com/go-courier/sqlx/v2", "DBExecutor")), "db")).
+						codegen.Type(file.Use("github.com/kunlun-qilian/sqlx/v2", "DBExecutor")), "db")).
 						Named(methodForFetch).
 						MethodOf(codegen.Var(m.PtrType(), "m")).
 						Return(codegen.Var(codegen.Error)).
@@ -232,11 +232,11 @@ func (m *Model) WriteByKey(file *codegen.File) {
 table := db.T(m)
 
 err := db.QueryExprAndScan(
-`+file.Use("github.com/go-courier/sqlx/v2/builder", "Select")+`(nil).
+`+file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "Select")+`(nil).
 From(
 	db.T(m),
-`+file.Use("github.com/go-courier/sqlx/v2/builder", "Where")+`(`+toExactlyConditionFrom(file, fieldNames...)+`),
-`+file.Use("github.com/go-courier/sqlx/v2/builder", "Comment")+`(?),
+`+file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "Where")+`(`+toExactlyConditionFrom(file, fieldNames...)+`),
+`+file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "Comment")+`(?),
 ),
 m,
 )
@@ -252,8 +252,8 @@ m,
 
 				file.WriteBlock(
 					codegen.Func(
-						codegen.Var(codegen.Type(file.Use("github.com/go-courier/sqlx/v2", "DBExecutor")), "db"),
-						codegen.Var(codegen.Type(file.Use("github.com/go-courier/sqlx/v2/builder", "FieldValues")), "fieldValues"),
+						codegen.Var(codegen.Type(file.Use("github.com/kunlun-qilian/sqlx/v2", "DBExecutor")), "db"),
+						codegen.Var(codegen.Type(file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "FieldValues")), "fieldValues"),
 					).
 						Named(methodForUpdateWithMap).
 						MethodOf(codegen.Var(m.PtrType(), "m")).
@@ -264,10 +264,10 @@ m,
 table := db.T(m)
 
 result, err := db.ExecExpr(
-	`+file.Use("github.com/go-courier/sqlx/v2/builder", "Update")+`(db.T(m)).
+	`+file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "Update")+`(db.T(m)).
 		Where(
 			`+toExactlyConditionFrom(file, fieldNames...)+`,
-			`+file.Use("github.com/go-courier/sqlx/v2/builder", "Comment")+`(?),
+			`+file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "Comment")+`(?),
 		).
 		Set(table.AssignmentsByFieldValues(fieldValues)...),
 	)
@@ -292,7 +292,7 @@ return nil
 
 				file.WriteBlock(
 					codegen.Func(
-						codegen.Var(codegen.Type(file.Use("github.com/go-courier/sqlx/v2", "DBExecutor")), "db"),
+						codegen.Var(codegen.Type(file.Use("github.com/kunlun-qilian/sqlx/v2", "DBExecutor")), "db"),
 						codegen.Var(codegen.Ellipsis(codegen.String), "zeroFields"),
 					).
 						Named(methodForUpdateWithStruct).
@@ -300,7 +300,7 @@ return nil
 						Return(codegen.Var(codegen.Error)).
 						Do(
 							codegen.Expr(`
-fieldValues := ` + file.Use("github.com/go-courier/sqlx/v2/builder", "FieldValuesFromStructByNonZero") + `(m, zeroFields...)
+fieldValues := ` + file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "FieldValuesFromStructByNonZero") + `(m, zeroFields...)
 return m.` + methodForUpdateWithMap + `(db, fieldValues)
 `),
 						),
@@ -313,7 +313,7 @@ return m.` + methodForUpdateWithMap + `(db, fieldValues)
 
 				file.WriteBlock(
 					codegen.Func(codegen.Var(
-						codegen.Type(file.Use("github.com/go-courier/sqlx/v2", "DBExecutor")), "db")).
+						codegen.Type(file.Use("github.com/kunlun-qilian/sqlx/v2", "DBExecutor")), "db")).
 						Named(method).
 						MethodOf(codegen.Var(m.PtrType(), "m")).
 						Return(codegen.Var(codegen.Error)).
@@ -322,12 +322,12 @@ return m.` + methodForUpdateWithMap + `(db, fieldValues)
 table := db.T(m)
 
 err := db.QueryExprAndScan(
-`+file.Use("github.com/go-courier/sqlx/v2/builder", "Select")+`(nil).
+`+file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "Select")+`(nil).
 From(
 	db.T(m),
-`+file.Use("github.com/go-courier/sqlx/v2/builder", "Where")+`(`+toExactlyConditionFrom(file, fieldNames...)+`),
-`+file.Use("github.com/go-courier/sqlx/v2/builder", "ForUpdate")+`(),
-`+file.Use("github.com/go-courier/sqlx/v2/builder", "Comment")+`(?),
+`+file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "Where")+`(`+toExactlyConditionFrom(file, fieldNames...)+`),
+`+file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "ForUpdate")+`(),
+`+file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "Comment")+`(?),
 ),
 m,
 )
@@ -345,7 +345,7 @@ m,
 
 				file.WriteBlock(
 					codegen.Func(codegen.Var(
-						codegen.Type(file.Use("github.com/go-courier/sqlx/v2", "DBExecutor")), "db")).
+						codegen.Type(file.Use("github.com/kunlun-qilian/sqlx/v2", "DBExecutor")), "db")).
 						Named(methodForDelete).
 						MethodOf(codegen.Var(m.PtrType(), "m")).
 						Return(codegen.Var(codegen.Error)).
@@ -354,10 +354,10 @@ m,
 table := db.T(m)
 
 _, err := db.ExecExpr(
-`+file.Use("github.com/go-courier/sqlx/v2/builder", "Delete")+`().
+`+file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "Delete")+`().
 	From(db.T(m),
-	`+file.Use("github.com/go-courier/sqlx/v2/builder", "Where")+`(`+toExactlyConditionFrom(file, fieldNames...)+`),
-	`+file.Use("github.com/go-courier/sqlx/v2/builder", "Comment")+`(`+string(file.Val(m.StructName+"."+methodForDelete).Bytes())+`),
+	`+file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "Where")+`(`+toExactlyConditionFrom(file, fieldNames...)+`),
+	`+file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "Comment")+`(`+string(file.Val(m.StructName+"."+methodForDelete).Bytes())+`),
 ))
 `,
 								file.Val(m.StructName+"."+methodForDelete),
@@ -373,7 +373,7 @@ _, err := db.ExecExpr(
 
 					file.WriteBlock(
 						codegen.Func(codegen.Var(
-							codegen.Type(file.Use("github.com/go-courier/sqlx/v2", "DBExecutor")), "db")).
+							codegen.Type(file.Use("github.com/kunlun-qilian/sqlx/v2", "DBExecutor")), "db")).
 							Named(methodForSoftDelete).
 							MethodOf(codegen.Var(m.PtrType(), "m")).
 							Return(codegen.Var(codegen.Error)).
@@ -381,17 +381,17 @@ _, err := db.ExecExpr(
 								codegen.Expr(`
 table := db.T(m)
 
-fieldValues := `+file.Use("github.com/go-courier/sqlx/v2/builder", "FieldValues")+`{}`),
+fieldValues := `+file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "FieldValues")+`{}`),
 
 								m.snippetSetDeletedAtIfNeedForFieldValues(file),
 								m.snippetSetUpdatedAtIfNeedForFieldValues(file),
 
 								codegen.Expr(`
 _, err := db.ExecExpr(
-	`+file.Use("github.com/go-courier/sqlx/v2/builder", "Update")+`(db.T(m)).
+	`+file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "Update")+`(db.T(m)).
 		Where(
 			`+toExactlyConditionFrom(file, fieldNames...)+`,
-			`+file.Use("github.com/go-courier/sqlx/v2/builder", "Comment")+`(`+string(file.Val(m.StructName+"."+methodForSoftDelete).Bytes())+`),
+			`+file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "Comment")+`(`+string(file.Val(m.StructName+"."+methodForSoftDelete).Bytes())+`),
 		).
 		Set(table.AssignmentsByFieldValues(fieldValues)...),
 )
@@ -414,7 +414,7 @@ func (m *Model) WriteCRUD(file *codegen.File) {
 
 func toExactlyConditionFrom(file *codegen.File, fieldNames ...string) string {
 	buf := &bytes.Buffer{}
-	buf.WriteString(file.Use("github.com/go-courier/sqlx/v2/builder", "And"))
+	buf.WriteString(file.Use("github.com/kunlun-qilian/sqlx/v2/builder", "And"))
 	buf.WriteString(`(
 `)
 

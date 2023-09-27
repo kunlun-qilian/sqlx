@@ -1,8 +1,8 @@
 ## Sqlx
 
-[![GoDoc Widget](https://godoc.org/github.com/go-courier/sqlx/v2?status.svg)](https://godoc.org/github.com/go-courier/sqlx/v2)
+[![GoDoc Widget](https://godoc.org/github.com/kunlun-qilian/sqlx/v2?status.svg)](https://godoc.org/github.com/kunlun-qilian/sqlx/v2)
 [![codecov](https://codecov.io/gh/go-courier/sqlx/branch/master/graph/badge.svg)](https://codecov.io/gh/go-courier/sqlx)
-[![Go Report Card](https://goreportcard.com/badge/github.com/go-courier/sqlx/v2)](https://goreportcard.com/report/github.com/go-courier/sqlx/v2)
+[![Go Report Card](https://goreportcard.com/badge/github.com/kunlun-qilian/sqlx/v2)](https://goreportcard.com/report/github.com/kunlun-qilian/sqlx/v2)
 
 
 Sql helpers just for mysql(5.7+)/postgres(10+) and mysql/postgres-compatibility db.

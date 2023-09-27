@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	. "github.com/go-courier/sqlx/v2/builder"
-	. "github.com/go-courier/sqlx/v2/builder/buidertestingutils"
+	. "github.com/kunlun-qilian/sqlx/v2/builder"
+	. "github.com/kunlun-qilian/sqlx/v2/builder/buidertestingutils"
 	"github.com/onsi/gomega"
 )
 
