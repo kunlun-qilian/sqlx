@@ -5,6 +5,26 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+# [3.0.0](https://github.com/kunlun-qilian/sqlx/compare/v2.23.13...v3.0.0)
+
+### Bug Fixes
+
+* **fix** 🐛 解决分区被当做索引处理问题 ([12d2768](https://github.com/kunlun-qilian/sqlx/commit/12d2768c34c134066b97fbb6e20c784d71065009))
+* **fix** 🐛 add alias ([cb4d72e](https://github.com/kunlun-qilian/sqlx/commit/cb4d72ef0e91031d2ca918446d24c42acd354731))
+
+
+### Features
+
+* **feat** **BREAKING CHANGE** 🎸 切换 v3版本 ([8b18a10](https://github.com/kunlun-qilian/sqlx/commit/8b18a109c71e2733d0a4ae455c2ba5ed15e3ec27))
+* **feat** 🎸 本地化,与go-courier断联 ([e733d22](https://github.com/kunlun-qilian/sqlx/commit/e733d2200c63a7924d5b07e71186b4d7473a19d5))
+* **feat** 🎸 import third party json package ([33b4069](https://github.com/kunlun-qilian/sqlx/commit/33b40690d56eb2ecca17df446d4af9f2ae02c86e))
+* **feat** 🎸 修改pg indexes 查询方式 ([c4d4d95](https://github.com/kunlun-qilian/sqlx/commit/c4d4d957873a4268fd6bad79669be5d495d36d1e))
+* **feat** 🎸 优化 sql 样式 ([7550914](https://github.com/kunlun-qilian/sqlx/commit/75509148118c0c9bbbd52be12bb8b4701f0ef747))
+* **feat** 🎸 generate support partition ([c914a65](https://github.com/kunlun-qilian/sqlx/commit/c914a65d11559119a87d682c67f32ee85f0e755b))
+* **feat** 🎸 实现分区表 migrate ([9a54e38](https://github.com/kunlun-qilian/sqlx/commit/9a54e3862c05cec865203283ecf42e5f1ea7ca1b))
+
+
+
 # [2.23.8](https://github.com/go-courier/sqlx/compare/v2.23.7...v2.23.8)
 
 
