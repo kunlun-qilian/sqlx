@@ -7,8 +7,8 @@ import (
 	typex "github.com/go-courier/x/types"
 
 	"github.com/go-courier/enumeration"
-	"github.com/kunlun-qilian/sqlx/v2"
-	"github.com/kunlun-qilian/sqlx/v2/builder"
+	"github.com/kunlun-qilian/sqlx/v3"
+	"github.com/kunlun-qilian/sqlx/v3/builder"
 )
 
 func DatabaseERFromDB(database *sqlx.Database, dialect builder.Dialect) *ERDatabase {

@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/kunlun-qilian/sqlx/v2"
+	"github.com/kunlun-qilian/sqlx/v3"
 
 	"github.com/go-courier/logr"
 	"github.com/pkg/errors"

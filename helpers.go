@@ -1,7 +1,7 @@
 package sqlx
 
 import (
-	"github.com/kunlun-qilian/sqlx/v2/builder"
+	"github.com/kunlun-qilian/sqlx/v3/builder"
 )
 
 func InsertToDB(db DBExecutor, model builder.Model, zeroFields []string, additions ...builder.Addition) builder.SqlExpr {

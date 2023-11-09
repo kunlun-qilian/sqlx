@@ -1,15 +1,16 @@
 ## Sqlx
 
-[![GoDoc Widget](https://godoc.org/github.com/kunlun-qilian/sqlx/v2?status.svg)](https://godoc.org/github.com/kunlun-qilian/sqlx/v2)
+[![GoDoc Widget](https://godoc.org/github.com/kunlun-qilian/sqlx/v3?status.svg)](https://godoc.org/github.com/kunlun-qilian/sqlx/v3)
 [![codecov](https://codecov.io/gh/go-courier/sqlx/branch/master/graph/badge.svg)](https://codecov.io/gh/go-courier/sqlx)
-[![Go Report Card](https://goreportcard.com/badge/github.com/kunlun-qilian/sqlx/v2)](https://goreportcard.com/report/github.com/kunlun-qilian/sqlx/v2)
+[![Go Report Card](https://goreportcard.com/badge/github.com/kunlun-qilian/sqlx/v3)](https://goreportcard.com/report/github.com/kunlun-qilian/sqlx/v3)
 
 
-Sql helpers just for mysql(5.7+)/postgres(10+) and mysql/postgres-compatibility db.
+Sql helpers just for mysql(5.7+)/postgres(11+) and mysql/postgres-compatibility db.
 
 
 ```go
-// @def primary ID
+// @def primary ID CreatedAt
+// @def partition range CreatedAt
 // @def index I_nickname/BTREE Nickname
 // @def index I_username Username
 // @def index I_geom/SPATIAL Geom

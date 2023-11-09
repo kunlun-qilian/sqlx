@@ -8,8 +8,8 @@ import (
 	"strings"
 
 	reflectx "github.com/go-courier/x/reflect"
-	"github.com/kunlun-qilian/sqlx/v2/builder"
-	"github.com/kunlun-qilian/sqlx/v2/scanner/nullable"
+	"github.com/kunlun-qilian/sqlx/v3/builder"
+	"github.com/kunlun-qilian/sqlx/v3/scanner/nullable"
 )
 
 type RowScanner interface {

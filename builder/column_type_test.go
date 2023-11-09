@@ -6,7 +6,7 @@ import (
 
 	"github.com/go-courier/x/ptr"
 	"github.com/go-courier/x/types"
-	. "github.com/kunlun-qilian/sqlx/v2/builder"
+	. "github.com/kunlun-qilian/sqlx/v3/builder"
 	"github.com/onsi/gomega"
 )
 

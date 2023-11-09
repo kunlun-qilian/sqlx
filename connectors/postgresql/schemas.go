@@ -5,8 +5,8 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/kunlun-qilian/sqlx/v2"
-	"github.com/kunlun-qilian/sqlx/v2/builder"
+	"github.com/kunlun-qilian/sqlx/v3"
+	"github.com/kunlun-qilian/sqlx/v3/builder"
 )
 
 func toInterfaces(list ...string) []interface{} {

@@ -13,9 +13,9 @@ import (
 	typex "github.com/go-courier/x/types"
 
 	"github.com/go-sql-driver/mysql"
-	"github.com/kunlun-qilian/sqlx/v2"
-	"github.com/kunlun-qilian/sqlx/v2/builder"
-	"github.com/kunlun-qilian/sqlx/v2/migration"
+	"github.com/kunlun-qilian/sqlx/v3"
+	"github.com/kunlun-qilian/sqlx/v3/builder"
+	"github.com/kunlun-qilian/sqlx/v3/migration"
 )
 
 var _ interface {

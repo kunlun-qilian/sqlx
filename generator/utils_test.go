@@ -4,7 +4,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/kunlun-qilian/sqlx/v2/builder"
+	"github.com/kunlun-qilian/sqlx/v3/builder"
 	"github.com/onsi/gomega"
 )
 

@@ -3,7 +3,7 @@ package sqlx_test
 import (
 	"testing"
 
-	"github.com/kunlun-qilian/sqlx/v2"
+	"github.com/kunlun-qilian/sqlx/v3"
 )
 
 func BenchmarkDB_DBExecutor(b *testing.B) {

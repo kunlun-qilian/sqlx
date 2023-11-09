@@ -13,12 +13,12 @@ import (
 	"github.com/go-courier/metax"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/google/uuid"
-	"github.com/kunlun-qilian/sqlx/v2"
-	"github.com/kunlun-qilian/sqlx/v2/builder"
-	"github.com/kunlun-qilian/sqlx/v2/datatypes"
-	"github.com/kunlun-qilian/sqlx/v2/migration"
-	"github.com/kunlun-qilian/sqlx/v2/mysqlconnector"
-	"github.com/kunlun-qilian/sqlx/v2/postgresqlconnector"
+	"github.com/kunlun-qilian/sqlx/v3"
+	"github.com/kunlun-qilian/sqlx/v3/builder"
+	"github.com/kunlun-qilian/sqlx/v3/datatypes"
+	"github.com/kunlun-qilian/sqlx/v3/migration"
+	"github.com/kunlun-qilian/sqlx/v3/mysqlconnector"
+	"github.com/kunlun-qilian/sqlx/v3/postgresqlconnector"
 	. "github.com/onsi/gomega"
 )
 

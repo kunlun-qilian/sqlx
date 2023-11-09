@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/kunlun-qilian/sqlx/v2/builder"
+	"github.com/kunlun-qilian/sqlx/v3/builder"
 )
 
 func NewFeatureDatabase(name string) *Database {

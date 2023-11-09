@@ -3,7 +3,7 @@ package database
 import (
 	"database/sql/driver"
 
-	"github.com/kunlun-qilian/sqlx/v2/datatypes"
+	"github.com/kunlun-qilian/sqlx/v3/datatypes"
 )
 
 // @def primary ID

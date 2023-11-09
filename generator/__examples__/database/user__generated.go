@@ -4,9 +4,9 @@ import (
 	fmt "fmt"
 	time "time"
 
-	github_com_go_courier_sqlx_v2 "github.com/kunlun-qilian/sqlx/v2"
-	github_com_go_courier_sqlx_v2_builder "github.com/kunlun-qilian/sqlx/v2/builder"
-	github_com_go_courier_sqlx_v2_datatypes "github.com/kunlun-qilian/sqlx/v2/datatypes"
+	github_com_go_courier_sqlx_v2 "github.com/kunlun-qilian/sqlx/v3"
+	github_com_go_courier_sqlx_v2_builder "github.com/kunlun-qilian/sqlx/v3/builder"
+	github_com_go_courier_sqlx_v2_datatypes "github.com/kunlun-qilian/sqlx/v3/datatypes"
 )
 
 func (User) PrimaryKey() []string {

@@ -1,7 +1,7 @@
 package enummeta
 
 import (
-	"github.com/kunlun-qilian/sqlx/v2/builder"
+	"github.com/kunlun-qilian/sqlx/v3/builder"
 )
 
 type SqlMetaEnum struct {

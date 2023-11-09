@@ -4,10 +4,10 @@ import (
 	"context"
 	"testing"
 
-	"github.com/kunlun-qilian/sqlx/v2/connectors/postgresql"
+	"github.com/kunlun-qilian/sqlx/v3/connectors/postgresql"
 
-	. "github.com/kunlun-qilian/sqlx/v2/builder"
-	"github.com/kunlun-qilian/sqlx/v2/builder/buidertestingutils"
+	. "github.com/kunlun-qilian/sqlx/v3/builder"
+	"github.com/kunlun-qilian/sqlx/v3/builder/buidertestingutils"
 	"github.com/onsi/gomega"
 )
 
