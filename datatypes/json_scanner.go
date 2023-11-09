@@ -2,8 +2,9 @@ package datatypes
 
 import (
 	"database/sql/driver"
-	"encoding/json"
 	"fmt"
+
+	"github.com/kunlun-qilian/utils/json"
 )
 
 func JSONScan(dbValue interface{}, value interface{}) error {

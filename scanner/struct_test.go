@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/go-courier/sqlx/v2/scanner/nullable"
+	"github.com/kunlun-qilian/sqlx/v2/scanner/nullable"
 
 	"github.com/DATA-DOG/go-sqlmock"
 )

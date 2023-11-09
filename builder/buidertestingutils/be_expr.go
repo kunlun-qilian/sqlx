@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/go-courier/sqlx/v2/builder"
+	"github.com/kunlun-qilian/sqlx/v2/builder"
 	"github.com/onsi/gomega"
 	"github.com/onsi/gomega/types"
 )

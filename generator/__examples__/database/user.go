@@ -3,7 +3,7 @@ package database
 import (
 	"database/sql/driver"
 
-	"github.com/go-courier/sqlx/v2/datatypes"
+	"github.com/kunlun-qilian/sqlx/v2/datatypes"
 )
 
 // @def primary ID

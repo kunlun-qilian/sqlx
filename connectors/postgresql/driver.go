@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/go-courier/sqlx/v2"
+	"github.com/kunlun-qilian/sqlx/v2"
 
 	"github.com/go-courier/logr"
 	"github.com/lib/pq"

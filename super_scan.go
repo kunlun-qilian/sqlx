@@ -4,7 +4,7 @@ import (
 	"context"
 	"database/sql"
 
-	"github.com/go-courier/sqlx/v2/scanner"
+	"github.com/kunlun-qilian/sqlx/v2/scanner"
 )
 
 type ScanIterator = scanner.ScanIterator

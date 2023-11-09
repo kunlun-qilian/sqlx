@@ -12,10 +12,10 @@ import (
 
 	typex "github.com/go-courier/x/types"
 
-	"github.com/go-courier/sqlx/v2"
-	"github.com/go-courier/sqlx/v2/builder"
-	"github.com/go-courier/sqlx/v2/migration"
 	"github.com/go-sql-driver/mysql"
+	"github.com/kunlun-qilian/sqlx/v2"
+	"github.com/kunlun-qilian/sqlx/v2/builder"
+	"github.com/kunlun-qilian/sqlx/v2/migration"
 )
 
 var _ interface {

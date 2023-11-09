@@ -2,9 +2,9 @@ package enummeta
 
 import (
 	"github.com/go-courier/enumeration"
-	"github.com/go-courier/sqlx/v2"
-	"github.com/go-courier/sqlx/v2/builder"
 	typex "github.com/go-courier/x/types"
+	"github.com/kunlun-qilian/sqlx/v2"
+	"github.com/kunlun-qilian/sqlx/v2/builder"
 )
 
 func SyncEnum(db sqlx.DBExecutor) error {

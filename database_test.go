@@ -11,14 +11,14 @@ import (
 	"github.com/go-courier/logr"
 
 	"github.com/go-courier/metax"
-	"github.com/go-courier/sqlx/v2"
-	"github.com/go-courier/sqlx/v2/builder"
-	"github.com/go-courier/sqlx/v2/datatypes"
-	"github.com/go-courier/sqlx/v2/migration"
-	"github.com/go-courier/sqlx/v2/mysqlconnector"
-	"github.com/go-courier/sqlx/v2/postgresqlconnector"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/google/uuid"
+	"github.com/kunlun-qilian/sqlx/v2"
+	"github.com/kunlun-qilian/sqlx/v2/builder"
+	"github.com/kunlun-qilian/sqlx/v2/datatypes"
+	"github.com/kunlun-qilian/sqlx/v2/migration"
+	"github.com/kunlun-qilian/sqlx/v2/mysqlconnector"
+	"github.com/kunlun-qilian/sqlx/v2/postgresqlconnector"
 	. "github.com/onsi/gomega"
 )
 

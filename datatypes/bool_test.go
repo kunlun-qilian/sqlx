@@ -1,9 +1,9 @@
 package datatypes
 
 import (
-	"encoding/json"
 	"testing"
 
+	"github.com/kunlun-qilian/utils/json"
 	"github.com/onsi/gomega"
 )
 
